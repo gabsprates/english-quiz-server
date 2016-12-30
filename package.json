@@ -1,0 +1,22 @@
+{
+  "name": "english-quiz-server",
+  "version": "1.0.0",
+  "description": "server for git remote add origin https://github.com/gabsprates/english-quiz/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabsprates/english-quiz-server.git"
+  },
+  "author": "Gabriel Prates <gabsprates@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabsprates/english-quiz-server/issues"
+  },
+  "homepage": "https://github.com/gabsprates/english-quiz-server#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
