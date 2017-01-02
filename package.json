@@ -1,9 +1,11 @@
 {
   "name": "english-quiz-server",
   "version": "1.0.0",
-  "description": "server for git remote add origin https://github.com/gabsprates/english-quiz/",
+  "description": "server for https://github.com/gabsprates/english-quiz/",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "nodemon": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/gabsprates/english-quiz-server#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.7"
   }
 }
