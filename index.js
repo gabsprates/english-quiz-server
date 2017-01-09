@@ -25,13 +25,7 @@ app.use(function (req, res, next) {
 
 // Routes
 
-app.get('/', function (req, res) {
-  res.send("it work's!")
-})
-
-app.get('/questions', function (req, res) {
-  res.send("questions")
-})
+app.get('/', require('./routes'))
 
 
 // Errors handling
@@ -43,6 +37,4 @@ app.use(function (err, req, res, next) {
 
 
 // Server
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+module.exports = app;
