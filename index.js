@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
 
 // Routes
 
-app.get('/', require('./routes'))
+app.use('/', require('./routes'))
 
 
 // Errors handling
