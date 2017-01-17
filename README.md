@@ -23,6 +23,22 @@ With the command `npm run export_and_run`, it will run on port 3000 and will acc
 * `DELETE`
   * `questions/:_id`: to delete a question
 
+### MongoDB Config
+
+You must create a `config/default.json` file, it must contain the following structure, with yours informations:
+
+```json
+{
+  "mongo": {
+    "database": "english_quiz",
+    "username": "",
+    "password": "",
+    "server": "",
+    "port": ""
+  }
+}
+```
+
 ## Contributing
 
 1. Fork it!
