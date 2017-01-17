@@ -1,26 +1,67 @@
+const debug = require('debug')('english_quiz:db');
+
 class QuestionsController {
 
-  constructor() {}
+  constructor(QuestionsModel) {
+    this.model = QuestionsModel;
+  }
 
   getAll(req, res, next) {
-    res.send('get all questions');
+    this.model.find({}, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      res.json(data);
+    })
   }
 
   getById(req, res, next) {
-    res.send('get one particular question by id');
+    var _id = req.params._id;
+    this.model.findOne(_id, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      if (!data) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        return next(err);
+      }
+      res.json(data);
+    })
   }
 
   create(req, res, next) {
-    res.send('create a new question');
+    var body = req.body;
+    this.model.create(body, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      res.json(data);
+    })
   }
 
   update(req, res, next) {
-    res.send('update a question by id');
+    var _id   = req.params._id;
+    var body  = req.body;
+    this.model.update(_id, body, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      res.json(data);
+    })
   }
 
   remove(req, res, next) {
-    res.send('delete a question by id');
+    var _id = req.params._id;
+    this.model.remove(_id, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      res.json(data);
+    })
   }
 }
 
-module.exports = new QuestionsController();
+module.exports = function(QuestionsModel) {
+  return new QuestionsController(QuestionsModel);
+}

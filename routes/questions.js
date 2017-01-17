@@ -1,15 +1,19 @@
 const express = require('express');
 const router  = express.Router();
-const QuestionsController = require('../controllers/QuestionsController');
 
-router.get('/', QuestionsController.getAll)
+const mongo   = require('../db/mongo');
 
-router.get('/:_id', QuestionsController.getById)
+const QuestionsModel = require('../models/QuestionsModel')(mongo);
+const QuestionsController = require('../controllers/QuestionsController')(QuestionsModel);
 
-router.post('/', QuestionsController.create)
+router.get('/', QuestionsController.getAll.bind(QuestionsController))
 
-router.put('/:_id', QuestionsController.update)
+router.get('/:_id', QuestionsController.getById.bind(QuestionsController))
 
-router.delete('/:_id', QuestionsController.remove)
+router.post('/', QuestionsController.create.bind(QuestionsController))
+
+router.put('/:_id', QuestionsController.update.bind(QuestionsController))
+
+router.delete('/:_id', QuestionsController.remove.bind(QuestionsController))
 
 module.exports = router;
