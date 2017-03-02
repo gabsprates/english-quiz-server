@@ -15,6 +15,17 @@ class QuestionsController {
     })
   }
 
+  getIds(req, res, next) {
+
+    this.model.find({}, { _id: true }, function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      res.json(data);
+    })
+
+  }
+
   getById(req, res, next) {
     var _id = req.params._id;
     this.model.findOne(_id, function(err, data) {

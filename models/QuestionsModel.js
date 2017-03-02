@@ -4,8 +4,9 @@ class QuestionsModel {
     this.db = db;
   }
 
-  find(query, callback) {
-    this.db.collection('questions').find(query, callback);
+  find(query, fields, callback) {
+    fields = fields || null;
+    this.db.collection('questions').find(query, fields, callback);
   }
 
   findOne(_id, callback) {
