@@ -15,9 +15,14 @@ class QuestionsController {
     })
   }
 
-  getIds(req, res, next) {
+  getPropsFromIds(req, res, next) {
+    let props = req.params.props
+      .split(',').reduce((obj, propName) => {
+        obj[propName] = true;
+        return obj;
+      }, { _id: true });
 
-    this.model.find({}, { _id: true }, function(err, data) {
+    this.model.find({}, props, function(err, data) {
       if (err) {
         return next(err);
       }

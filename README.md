@@ -12,8 +12,8 @@ With the command `npm run export_and_run`, it will run on port 3000 and will acc
 
 * `GET`
   * `questions/`: return all questions
-  * `questions/ids`: return all questions ids
   * `questions/:_id`: return a especific question
+  * `questions/props/:props`: return props, separated with comma (`,`), from all questions ids
 
 * `POST`
   * `questions/`: to create a new question

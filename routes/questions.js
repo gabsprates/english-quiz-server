@@ -8,9 +8,9 @@ const QuestionsController = require('../controllers/QuestionsController')(Questi
 
 router.get('/', QuestionsController.getAll.bind(QuestionsController))
 
-router.get('/ids', QuestionsController.getIds.bind(QuestionsController))
-
 router.get('/:_id', QuestionsController.getById.bind(QuestionsController))
+
+router.get('/props/:props/', QuestionsController.getPropsFromIds.bind(QuestionsController))
 
 router.post('/', QuestionsController.create.bind(QuestionsController))
 
