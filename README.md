@@ -8,7 +8,7 @@ I built it with NodeJS, ExpressJS and MongoDB.
 
 ## How to use
 
-With the command `npm run export_and_run`, it will run on port 3000 and will accept 4 HTTP verbs for the route `questions/`:
+With the command `npm run exrun`, it will run on port 3000 and will accept 4 HTTP verbs for the route `questions/`:
 
 * `GET`
   * `questions/`: return all questions
