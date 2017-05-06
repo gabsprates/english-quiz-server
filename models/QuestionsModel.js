@@ -23,7 +23,7 @@ class QuestionsModel {
   update(_id, data, callback) {
 
     var query = { _id: this.db.ObjectId(_id) };
-    this.db.collection('questions').update(query, data, callback);
+    this.db.collection('questions').update(query, { $set: data }, callback);
 
   }
 
