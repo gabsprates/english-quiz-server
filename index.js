@@ -22,6 +22,7 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
 
   let date = new Date()
+  console.log(`\n -- ${req.originalMethod} ::> ${req.originalUrl}`)
   console.log(`request at: ${date.toString()}`)
   next()
 })
@@ -42,3 +43,4 @@ app.use(function (err, req, res, next) {
 
 // Server
 module.exports = app;
+
